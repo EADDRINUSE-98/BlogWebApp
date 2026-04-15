@@ -6,3 +6,5 @@ from django.db import models
 class Post(models.Models):
     title = models.CharField(max_length=30)
     publish_timestamp = models.DataTimeField()
+    is_published = models.BooleanField()
+    content = models.TextField()
