@@ -1,0 +1,51 @@
+body {
+  margin: 0;
+  /* background-color: #2B2A2A; */
+  background-color: #000000;
+  /* website background color
+  /* background-color: #4B352A; */
+  /* website background color
+  /* color: #FEB05D; normal text k liye */
+  /* color: #F5F2F2; */
+  /* color: #5A7ACD; */
+  /* color: #F0F2BD; */
+  /* color: #FF9F00; */
+  color: #ff4499;
+}
+
+.navbar {
+  display: grid;
+  grid-template-columns: 2fr repeat(2, 100px);
+  grid-auto-rows: minmax(20px, auto);
+  padding: 1rem;
+  /* border-radius: 20px 20px 20px 20px; */
+  border-radius: 0px 0px 0px 0px;
+  border-bottom: inset;
+}
+
+a {
+  text-decoration: none;
+}
+
+div.login-btn {
+  display: flex;
+  justify-items: center;
+}
+
+.login-btn a {
+  color: inherit;
+  text-align: center;
+}
+
+.logo a {
+  font-size: 25px;
+  color: inherit;
+  font-weight: 600;
+  border: inset;
+  padding: 2px;
+}
+
+.logo a:hover {
+  color: #E9A319;
+  /* border-radius: 10px 10px 10px 10px; */
+}

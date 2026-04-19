@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Lekh Archive</title>
+        {% load static %}
+        <!-- <link href="css/style.css" rel="stylesheet"> -->
+        <link href="{% static "base.css" %}" rel="stylesheet">
+        {% block extra-css %}
+        {% endblock extra-css %}
+    </head>
+    <body>
+        <!-- nav bar for header -->
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#">Lekh Archive</a>
+            </div>
+            <div>theme toggle button here</div>
+            <div class="login-btn">
+                <a href="{% url 'admin:login' %}">Login as admin</a>
+            </div>
+        </nav>
+        <h1>Title</h1>
+        <!-- This will be a flex container for header bar -->
+        <div class="footer">
+            <!-- For website name -->
+            <div></div>
+            <!-- For Home, Topics, and Explore tabs -->
+            <div></div>
+            <!-- For light and dark theme toggle button -->
+            <div></div>
+            <!-- For "Sign-in as admin" button -->
+            <div></div>
+        </div>
+    </body>
+</html>
