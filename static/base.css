@@ -1,7 +1,44 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Kumar+One&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Monoton&display=swap');
+
+
+.jetbrains-mono-font {
+  font-family: "JetBrains Mono", monospace;
+  font-optical-sizing: auto;
+  /* font-weight: <weight>; */
+  font-weight: 200;
+  font-style: normal;
+}
+
+.monoton-regular {
+  font-family: "Monoton", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+:root {
+  --base-color: black;
+  --base-variant: #111111;
+  --text-color: #ff4499;
+  --text-variant: #00ffd2;
+  --primary-color: #0a0047;
+  --secondary-color: #004687;
+}
+
+.lightmode {
+  --base-color: #F3F3E0;
+  --base-variant: #FFE8BE;
+  --text-color: #2C3947;
+  --text-variant: #547A95;
+  --primary-color: #0a0047;
+  --secondary-color: #004687;
+}
+
 body {
   margin: 0;
   /* background-color: #2B2A2A; */
-  background-color: #000000;
+  background-color: var(--base-color);
   /* website background color
   /* background-color: #4B352A; */
   /* website background color
@@ -10,7 +47,10 @@ body {
   /* color: #5A7ACD; */
   /* color: #F0F2BD; */
   /* color: #FF9F00; */
-  color: #ff4499;
+  color: var(--text-color);
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 500;
+  font-style: normal;
 }
 
 .navbar {
@@ -21,31 +61,50 @@ body {
   /* border-radius: 20px 20px 20px 20px; */
   border-radius: 0px 0px 0px 0px;
   border-bottom: inset;
+  /* font-family: "Kumar One", serif; */
+  /* font-weight: 400; */
+  /* font-style: normal; */
 }
 
-a {
+.navbar a {
   text-decoration: none;
 }
 
 div.login-btn {
   display: flex;
   justify-items: center;
+  padding: 2px;
 }
 
 .login-btn a {
   color: inherit;
   text-align: center;
-}
-
-.logo a {
-  font-size: 25px;
-  color: inherit;
-  font-weight: 600;
-  border: inset;
+  font-family: "Kumar One", serif;
+  font-style: normal;
   padding: 2px;
 }
 
-.logo a:hover {
-  color: #E9A319;
-  /* border-radius: 10px 10px 10px 10px; */
+.logo a {
+  font-size: 30px;
+  color: inherit;
+  font-weight: 600;
+  font-family: "Monoton", sans-serif;
+  font-style: normal;
+  /* border: inset; */
+  padding: 2px;
+}
+
+.logo a:hover,
+.login-btn a:hover {
+  /* color: #FF0063; */
+  background-color: var(--text-color);
+  color: var(--base-color);
+  border-radius: 10px 10px 10px 10px;
+}
+
+#theme-btn {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: var(--base-variant);
 }
