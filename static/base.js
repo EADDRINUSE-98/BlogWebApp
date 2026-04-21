@@ -1,5 +1,11 @@
 const toggleButton = document.querySelectorAll("#theme-btn");
+const bodyElement = document.querySelector("body");
 
-toggleButton.addEventListener("click", () => {
-
-})
+toggleButton.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    bodyElement.classList.toggle("lightmode");
+  });
+});
+// addEventListener("click", () => {
+//   bodyElement.classList.toggle("lightmode");
+// }));

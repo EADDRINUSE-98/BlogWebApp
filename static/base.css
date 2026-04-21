@@ -18,21 +18,25 @@
 }
 
 :root {
-  --base-color: black;
-  --base-variant: #111111;
+  /* --base-color: black; */
+  --base-color: #080616;
+  --base-variant: #30364F;
   --text-color: #ff4499;
   --text-variant: #00ffd2;
   --primary-color: #0a0047;
   --secondary-color: #004687;
+  --theme-btn-fill: #F3F3E0;
 }
 
 .lightmode {
   --base-color: #F3F3E0;
-  --base-variant: #FFE8BE;
-  --text-color: #2C3947;
+  --base-variant: #E1D9BC;
+  /* --text-color: #2C3947; */
+  --text-color: #000000;
   --text-variant: #547A95;
   --primary-color: #0a0047;
   --secondary-color: #004687;
+  --theme-btn-fill: #080616;
 }
 
 body {
@@ -58,9 +62,9 @@ body {
   grid-template-columns: 2fr repeat(2, 100px);
   grid-auto-rows: minmax(20px, auto);
   padding: 1rem;
-  /* border-radius: 20px 20px 20px 20px; */
   border-radius: 0px 0px 0px 0px;
-  border-bottom: inset;
+  /* border-bottom: inset; */
+  border-style: outset;
   /* font-family: "Kumar One", serif; */
   /* font-weight: 400; */
   /* font-style: normal; */
@@ -100,6 +104,12 @@ div.login-btn {
   background-color: var(--text-color);
   color: var(--base-color);
   border-radius: 10px 10px 10px 10px;
+  transition-duration: 0.75s;
+}
+
+.logo a:not(:hover),
+.login-btn a:not(:hover) {
+  transition-duration: 0.75s;
 }
 
 #theme-btn {
@@ -107,4 +117,21 @@ div.login-btn {
   width: 50px;
   border-radius: 50%;
   background-color: var(--base-variant);
+  fill: var(--theme-btn-fill);
+  border: none;
+  padding: 0;
+}
+
+#theme-btn svg:first-child {
+  display: none;
+}
+
+.lightmode #theme-btn svg:last-child {
+  display: none;
+  margin: auto;
+}
+
+.lightmode #theme-btn svg:first-child {
+  display: block;
+  margin: auto;
 }
