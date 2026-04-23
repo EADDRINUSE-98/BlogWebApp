@@ -37,7 +37,11 @@
                 <a href="{% url 'admin:login' %}">Login as admin</a>
             </div>
         </nav>
-        <h1>Title</h1>
+        <main>
+            <!-- html injection here -->
+            {% block main-content %}
+            {% endblock main-content %}
+        </main>
         <!-- This will be a flex container for header bar -->
         <div class="footer">
             <!-- For website name -->

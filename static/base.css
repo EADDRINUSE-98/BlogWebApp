@@ -63,8 +63,8 @@ body {
   grid-auto-rows: minmax(20px, auto);
   padding: 1rem;
   border-radius: 0px 0px 0px 0px;
-  /* border-bottom: inset; */
-  border-style: outset;
+  border-bottom: inset;
+  /* border-style: outset; */
   /* font-family: "Kumar One", serif; */
   /* font-weight: 400; */
   /* font-style: normal; */

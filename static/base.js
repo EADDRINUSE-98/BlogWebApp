@@ -6,6 +6,3 @@ toggleButton.forEach((btn) => {
     bodyElement.classList.toggle("lightmode");
   });
 });
-// addEventListener("click", () => {
-//   bodyElement.classList.toggle("lightmode");
-// }));
