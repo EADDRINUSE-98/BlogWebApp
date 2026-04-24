@@ -1,0 +1,50 @@
+:root {
+  /* --base-color: black; */
+  --base-color: #080616;
+  --base-variant: #30364F;
+  --text-color: #ff4499;
+  --text-variant: #00ffd2;
+  --primary-color: #0a0047;
+  --secondary-color: #004687;
+  --theme-btn-fill: #F3F3E0;
+}
+
+.lightmode {
+  --base-color: #F3F3E0;
+  --base-variant: #E1D9BC;
+  /* --text-color: #2C3947; */
+  --text-color: #000000;
+  --text-variant: #547A95;
+  --primary-color: #0a0047;
+  --secondary-color: #004687;
+  --theme-btn-fill: #080616;
+}
+
+div[role=tabpanel],
+div[role=tablist] {
+  margin-inline: 15%;
+}
+
+button[role=tab] {
+  display: inline-block;
+  outline: 0;
+  border: 0;
+  /* cursor: pointer; */
+  background: var(--base-color);
+  color: var(--text-color);
+  margin-block: 5px;
+  padding: 14px 24px 16px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+  transition: transform 200ms;
+}
+
+button[role=tab]:hover {
+  transform: translateY(-2px);
+}
+
+button[role=tab][aria-selected=true] {
+  background: var(--base-variant);
+  color: var(--text-variant);
+}
