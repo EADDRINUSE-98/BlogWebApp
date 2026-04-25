@@ -20,12 +20,13 @@
                     aria-selected="false">Topic based</button>
         </div>
         <div role="tabpanel" aria-labelledby="home-tab" id="home-panel">
-            <div class="home-section">
-                <p>
-                    home
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem placeat dolore quibusdam corrupti dolores, laboriosam eveniet nisi perferendis incidunt ad consectetur est molestiae quam quisquam magni cumque facilis minima molestias.
-                </p>
-            </div>
+            {% for blog in blog_list %}
+                <div class="blog-section">
+                    <a href="{% url 'blogging_app:post' blog.id %}">{{ blog.title }}</a>
+                    <span>{{ blog.description }}</span>
+                    <span><strong>{{ blog.publish_timestamp }}</strong></span>
+                </div>
+            {% endfor %}
         </div>
         <div role="tabpanel"
              aria-labelledby="most-viewed-tab"
