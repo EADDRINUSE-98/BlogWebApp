@@ -130,3 +130,8 @@ STATIC_URL = "static/"
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
+
+# Login urls
+LOGIN_URL = "blogging_app:login"
+LOGIN_REDIRECT_URL = "blogging_app:dashboard"
+LOGOUT_REDIRECT_URL = LOGIN_URL
