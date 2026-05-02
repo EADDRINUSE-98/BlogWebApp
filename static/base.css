@@ -83,9 +83,9 @@ div.login-btn {
 .login-btn a {
   color: inherit;
   text-align: center;
-  font-family: "Kumar One", serif;
+  font-family: "JetBrains Mono", monospace;
   font-style: normal;
-  padding: 2px;
+  padding: 1rem;
 }
 
 .logo a {

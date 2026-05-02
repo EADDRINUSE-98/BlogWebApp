@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     "blogging_app.apps.BloggingAppConfig",
+    "django_extensions",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -132,6 +133,6 @@ STATICFILES_DIRS = [
 ]
 
 # Login urls
-LOGIN_URL = "blogging_app:login"
-LOGIN_REDIRECT_URL = "blogging_app:dashboard"
-LOGOUT_REDIRECT_URL = LOGIN_URL
+LOGIN_URL = "login"
+LOGIN_REDIRECT_URL = "dashboard_app:dashboard"
+LOGOUT_REDIRECT_URL = "blogging_app:home"

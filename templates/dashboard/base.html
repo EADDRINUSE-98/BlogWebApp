@@ -3,18 +3,14 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Lekh Archive</title>
-        {% load static %}
+        <title>Author Dashboard</title>
         <!-- <link href="css/style.css" rel="stylesheet"> -->
-        <link href="{% static "base.css" %}" rel="stylesheet">
-        {% block extra-css %}
-        {% endblock extra-css %}
     </head>
     <body>
         <!-- nav bar for header -->
         <nav class="navbar">
-            <div class="logo">
-                <a href="{% url 'blogging_app:home' %}">Lekh Archive</a>
+            <div class="dashboard-logo">
+                <a href="{% url 'dashboard_app:dashboard' %}">Lekh Archive Dashboard</a>
             </div>
             <!-- <div>theme toggle btn</div> -->
             <button id="theme-btn">
@@ -33,28 +29,9 @@
                     <path d="M338.5-338.5Q280-397 280-480t58.5-141.5Q397-680 480-680t141.5 58.5Q680-563 680-480t-58.5 141.5Q563-280 480-280t-141.5-58.5ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Z" />
                 </svg>
             </button>
-            <div class="login-btn">
-                <a href="{% url 'login' %}">Login</a>
+            <div class="logout-btn">
+                <a href="{% url 'logout' %}">Logout</a>
             </div>
         </nav>
-        <main>
-            <!-- html injection here -->
-            {% block main-content %}
-            {% endblock main-content %}
-        </main>
-        <!-- This will be a flex container for header bar -->
-        <div class="footer">
-            <!-- For website name -->
-            <div></div>
-            <!-- For Home, Topics, and Explore tabs -->
-            <div></div>
-            <!-- For light and dark theme toggle button -->
-            <div></div>
-            <!-- For "Sign-in as admin" button -->
-            <div></div>
-        </div>
     </body>
-    <script src="{% static "base.js" %}"></script>
-    {% block extra_js %}
-    {% endblock extra_js %}
 </html>

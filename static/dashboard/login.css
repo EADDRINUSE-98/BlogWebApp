@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Monoton&display=swap');
+
+
+.jetbrains-mono-font {
+  font-family: "JetBrains Mono", monospace;
+  font-optical-sizing: auto;
+  /* font-weight: <weight>; */
+  font-weight: 200;
+  font-style: normal;
+}
+
+:root {
+  /* --base-color: black; */
+  --base-color: #080616;
+  --base-variant: #30364F;
+  --text-color: #ff4499;
+  --text-variant: #00ffd2;
+  --primary-color: #0a0047;
+  --secondary-color: #004687;
+  --theme-btn-fill: #F3F3E0;
+}
+
+.lightmode {
+  --base-color: #F3F3E0;
+  --base-variant: #E1D9BC;
+  /* --text-color: #2C3947; */
+  --text-color: #000000;
+  --text-variant: #547A95;
+  --primary-color: #0a0047;
+  --secondary-color: #004687;
+  --theme-btn-fill: #080616;
+}
+
+* {
+  font-family: "JetBrains Mono", monospace;
+}
+
+body {
+  background-color: var(--base-color);
+  /* margin */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50dvh;
+}
+
+#login-container span {
+  font-size: 1.75rem;
+}
+
+#login-container {
+  border-style: inset;
+  margin: auto;
+  padding: 2rem;
+  border: 2px solid;
+  overflow: auto;
+  border-color: var(--base-variant);
+  border-radius: 10px;
+}
+
+#login-header {
+  display: grid;
+  grid-template-columns: 1fr 60px;
+  background-color: var(--base-color);
+  color: var(--text-color);
+  font-weight: bolder;
+}
+
+#login-form {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--base-variant);
+  font-weight: bold;
+  color: var(--text-color);
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 1.25rem;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+}
+
+#theme-btn {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: var(--base-variant);
+  fill: var(--theme-btn-fill);
+  border: none;
+  margin: auto;
+  margin-bottom: 10px;
+  padding: 0;
+}
+
+#theme-btn svg:first-child {
+  display: none;
+}
+
+.lightmode #theme-btn svg:last-child {
+  display: none;
+  margin: auto;
+}
+
+.lightmode #theme-btn svg:first-child {
+  display: block;
+  margin: auto;
+}
+
+#submit-btn {
+  border: 0;
+  font-size: 1.1rem;
+  background-color: var(--base-variant);
+  color: var(--text-color);
+  padding: 6px;
+  border: 3px solid var(--base-variant);
+  margin-block: 6px;
+}
+
+#submit-btn:hover {
+  transition-duration: 0.2;
+  /* border: 3px solid var(--text-variant); */
+  border-color: var(--text-variant);
+  color: var(--text-variant);
+  /* border-color: */
+}
+
+#id_username,
+#id_password {
+  background-color: #BFC9D1;
+  border: 0;
+}
+
+.lightmode #id_username,
+.lightmode #id_password {
+  background-color: #FAF3E1;
+  border: 0;
+}
