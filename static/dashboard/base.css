@@ -1,5 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Kumar+One&display=swap'); */
-/* @import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Monoton&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Warnes&display=swap');
 
 .jetbrains-mono-font {
@@ -38,6 +37,7 @@
   --theme-btn-fill: #080616;
 }
 
+
 body {
   margin: 0;
   /* background-color: #2B2A2A; */
@@ -73,24 +73,29 @@ body {
   text-decoration: none;
 }
 
-div.login-btn {
+div.logout-btn {
   display: flex;
   justify-items: center;
   padding: 2px;
 }
 
-.login-btn a {
+.logout-btn button {
   color: inherit;
   text-align: center;
   font-family: "JetBrains Mono", monospace;
   font-style: normal;
   padding: 1rem;
+  background-color: inherit;
+  border: 0;
+  font-size: 1rem;
+  font-weight: 500;
 }
 
-.logo a {
+.dashboard-logo a {
   font-size: 30px;
   color: inherit;
   font-weight: 600;
+  /* font-family: "Monoton", sans-serif; */
   font-family: "Warnes", cursive;
   font-style: normal;
   /* border: inset; */
@@ -98,8 +103,8 @@ div.login-btn {
   font-size: 2.75rem;
 }
 
-.logo a:hover,
-.login-btn a:hover {
+.dashboard-logo a:hover,
+.logout-btn button:hover {
   /* color: #FF0063; */
   background-color: var(--text-color);
   color: var(--base-color);
@@ -107,8 +112,8 @@ div.login-btn {
   transition-duration: 0.75s;
 }
 
-.logo a:not(:hover),
-.login-btn a:not(:hover) {
+.dashboard-logo a:not(:hover),
+.logout-btn button:not(:hover) {
   transition-duration: 0.75s;
 }
 

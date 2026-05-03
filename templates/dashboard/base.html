@@ -4,7 +4,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Author Dashboard</title>
-        <!-- <link href="css/style.css" rel="stylesheet"> -->
+        {% load static %}
+        <link href="{% static "dashboard/base.css" %}" rel="stylesheet">
+        {% block extra_css %}
+        {% endblock extra_css %}
     </head>
     <body>
         <!-- nav bar for header -->
@@ -30,8 +33,26 @@
                 </svg>
             </button>
             <div class="logout-btn">
-                <a href="{% url 'logout' %}">Logout</a>
+                <form method="post" action="{% url 'logout' %}">
+                    <!-- <a href="{% url 'logout' %}">Logout</a> -->
+                    {% csrf_token %}
+                    <button type="submit">Logout</button>
+                </form>
             </div>
         </nav>
+        <main>
+            <nav class="sidebar">
+                <a href="#">Home</a>
+                <a href="#">Create Post</a>
+                <a href="#">Posts</a>
+                <a href="#">Drafts</a>
+                <a href="#">Tags</a>
+            </nav>
+            {% block main_content %}
+            {% endblock main_content %}
+        </main>
+        <script src="{% static "dashboard/theme_btn.js" %}"></script>
+        {% block extra_js %}
+        {% endblock extra_js %}
     </body>
 </html>

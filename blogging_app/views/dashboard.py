@@ -39,4 +39,5 @@ def staff_check(user):
 @login_required()
 @user_passes_test(staff_check)
 def dashboard_view(request):
-    return HttpResponse("This will be Dashboard")
+    # return HttpResponse("This will be Dashboard")
+    return render(request, "dashboard/base.html")
