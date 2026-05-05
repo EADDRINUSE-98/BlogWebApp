@@ -1,0 +1,19 @@
+:root {
+  /* --base-color: black; */
+  --base-color: #080616;
+  --base-variant: #30364F;
+  --text-color: #ff4499;
+  --text-variant: #00ffd2;
+  --primary-color: #0a0047;
+  --secondary-color: #004687;
+  --theme-btn-fill: #F3F3E0;
+}
+
+div.home_content {
+  display: flex;
+  flex-direction: column;
+}
+
+main svg {
+  fill: var(--text-variant);
+}

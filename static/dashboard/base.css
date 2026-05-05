@@ -185,5 +185,4 @@ main {
   grid-template-rows: repeat(6, 1fr);
   width: 200px;
   border-right: inset;
-  /* border-radius: 50%; */
 }
