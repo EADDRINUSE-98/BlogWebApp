@@ -14,6 +14,12 @@ div.home_content {
   flex-direction: column;
 }
 
+div.hello_msg {
+  display: flex;
+  flex-direction: row;
+}
+
 main svg {
-  fill: var(--text-variant);
+  fill: var(--text-color);
+  margin-block: auto auto;
 }
