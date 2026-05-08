@@ -14,5 +14,9 @@
             </svg>
             <h1>Hi {{ user.get_full_name|default:user.username }}</h1>
         </div>
+        <span id="rotating_text"></span>
     </div>
 {% endblock main_content %}
+{% block extra_js %}
+    <script src="{% static "dashboard/rotating_text.js" %}"></script>
+{% endblock extra_js %}
