@@ -7,5 +7,9 @@ app_name = "dashboard_app"
 
 urlpatterns = [
     path("", dashboard.dashboard_view, name="dashboard"),
-    # path("", include("django.contrib.auth.urls")),
+    path(
+        "create_post/",
+        dashboard.dashboard_create_post_view,
+        name="dashboard_create_post",
+    ),
 ]

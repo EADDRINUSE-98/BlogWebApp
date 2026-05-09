@@ -183,6 +183,7 @@ main {
   grid-template-rows: repeat(6, 1fr);
   width: 200px;
   height: 88.5vh;
+  /* height: 100vh; */
   gap: 0px;
   border-right: inset;
   position: sticky;

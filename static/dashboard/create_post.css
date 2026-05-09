@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Warnes&display=swap');
+
+.jetbrains-mono-font {
+  font-family: "JetBrains Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+}
+
+:root {
+  /* --base-color: black; */
+  --base-color: #080616;
+  --base-variant: #30364F;
+  --text-color: #ff4499;
+  --text-variant: #00ffd2;
+  --primary-color: #0a0047;
+  --secondary-color: #004687;
+  --theme-btn-fill: #F3F3E0;
+  --input-bg: #BFC9D1;
+}
+
+.lightmode {
+  --base-color: #F3F3E0;
+  --base-variant: #E1D9BC;
+  /* --text-color: #2C3947; */
+  --text-color: #000000;
+  --text-variant: #547A95;
+  --primary-color: #0a0047;
+  --secondary-color: #004687;
+  --theme-btn-fill: #080616;
+  --input-bg: #FAF3E1;
+}
+
+#create_post_container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin: 25px;
+  padding: 30px;
+}
+
+h1,
+h2 {
+  margin: 0;
+}
+
+p {
+  color: var(--text-variant);
+}
+
+nav.sidebar a#create_post_anchor {
+  color: var(--text-variant);
+}
+
+/* create post form */
+#create_post_container form {
+  background-color: var(--base-variant);
+  padding: 35px;
+  border-radius: 10px;
+  display: flex;
+  flex: 1;
+  gap: 5px;
+  flex-direction: column;
+}
+
+/* title styling  */
+input#title_input {
+  border: 0;
+  background-color: var(--input-bg);
+  width: 50%;
+  height: 30px;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+/* description styling */
+#description_input {
+  border: 0;
+  background-color: var(--input-bg);
+  width: 75%;
+  height: 60px;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 5px;
+  resize: none;
+  padding: 8px;
+}
+
+/* content styling */
+#content_input,
+.CodeMirror {
+  border: 0;
+  background-color: var(--input-bg);
+  border-radius: 5px;
+}
+
+div[role="toolbar"] button {
+  color: var(--text-base);
+}
+
+div.EasyMDEContainer {}

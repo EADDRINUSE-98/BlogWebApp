@@ -34,7 +34,6 @@
             </button>
             <div class="logout-btn">
                 <form method="post" action="{% url 'logout' %}">
-                    <!-- <a href="{% url 'logout' %}">Logout</a> -->
                     {% csrf_token %}
                     <button type="submit">Logout</button>
                 </form>
@@ -42,12 +41,13 @@
         </nav>
         <main>
             <nav class="sidebar">
-                <a href="#">Home</a>
-                <a href="#">Create Post</a>
-                <a href="#">Posts</a>
-                <a href="#">Drafts</a>
-                <a href="#">Tags</a>
-                <a href="#">Stats</a>
+                <a id="home_anchor" href="#">Home</a>
+                <a id="create_post_anchor"
+                   href="{% url 'dashboard_app:dashboard_create_post' %}">Create Post</a>
+                <a id="posts_anchor" href="#">Posts</a>
+                <a id="drafts_anchor" href="#">Drafts</a>
+                <a id="tags_anchor" href="#">Tags</a>
+                <a id="stats_anschor" href="#">Stats</a>
             </nav>
             {% block main_content %}
             {% endblock main_content %}

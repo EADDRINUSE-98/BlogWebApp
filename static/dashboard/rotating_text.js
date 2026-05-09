@@ -1,5 +1,5 @@
 const textArray = [
-  "&xlarr; Pick you poison!",
+  "&xlarr; Pick your poison!",
   "Continue where you left off.",
   "Put your thoughts on pixels.",
   "Typing a day keeps the mediocrity at bay.",
@@ -19,6 +19,11 @@ const updateText = () => {
     p.style.opacity = 1;
     indx = (indx + 1) % textArray.length;
   }, 500);
+
+  setTimeout(() => {
+    p.style.transform = "translateY(20px)";
+    p.style.opacity = 0;
+  }, 4000);
 }
 
 updateText();
