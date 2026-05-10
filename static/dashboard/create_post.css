@@ -59,7 +59,7 @@ nav.sidebar a#create_post_anchor {
   border-radius: 10px;
   display: flex;
   flex: 1;
-  gap: 5px;
+  gap: 25px;
   flex-direction: column;
 }
 
@@ -99,4 +99,46 @@ div[role="toolbar"] button {
   color: var(--text-base);
 }
 
-div.EasyMDEContainer {}
+div.EasyMDEContainer {
+  border: solid;
+  border-radius: 5px;
+  border-color: var(--base-color);
+}
+
+div.editor-preview-active *,
+div.editor-preview-active-side * {
+  color: #080616;
+}
+
+/* status choice styling */
+select#status_input {
+  border: 0;
+  border-radius: 5px;
+  appearance: base-select;
+  background-color: var(--input-bg);
+  width: 100px;
+  height: 30px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+option {
+  background-color: var(--input-bg);
+}
+
+/* submit button */
+button#post_submit_btn {
+  margin: auto;
+  width: 15%;
+  font-size: 15px;
+  font-weight: bold;
+  background-color: var(--input-bg);
+  border: 0;
+  border-radius: 4px;
+  transition: 0.25s linear;
+}
+
+button#post_submit_btn:hover {
+  box-shadow: 2px 2px 7px grey, -2px -2px 7px grey, -2px 2px 7px grey, 2px -2px 7px grey;
+  transition: 0.25s linear;
+}

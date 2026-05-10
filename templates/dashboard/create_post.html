@@ -23,9 +23,15 @@
                 <lable for="description_input">Description</lable>
             </h2>
             {{ form.description }}
+            <h2>
+                <lable for="content_input">Post Content</lable>
+            </h2>
             {{ form.content }}
+            <h2>
+                <lable for="publish_input">Publish Status</lable>
+            </h2>
             {{ form.is_published }}
-            <button type="submit">Save</button>
+            <button id="post_submit_btn" type="submit">Save</button>
         </form>
     </div>
 {% endblock main_content %}

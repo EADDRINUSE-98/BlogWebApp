@@ -150,6 +150,7 @@ div.logout-btn {
   justify-content: center;
   align-items: center;
   font-size: 1.20rem;
+  /* padding: 2rem; */
 }
 
 .sidebar a:hover {
@@ -182,8 +183,8 @@ main {
   display: grid;
   grid-template-rows: repeat(6, 1fr);
   width: 200px;
-  height: 88.5vh;
-  /* height: 100vh; */
+  /* height: 88.5vh; */
+  height: 100vh;
   gap: 0px;
   border-right: inset;
   position: sticky;
