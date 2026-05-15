@@ -17,3 +17,4 @@ class Post(models.Model):
         default=False, max_length=7, choices=IS_PUBLISHED_STATUS_CHOICE
     )
     content = models.TextField()
+    slug = models.SlugField(unique=True, max_length=150)

@@ -4,7 +4,8 @@ from django.core.exceptions import PermissionDenied
 from django.http import HttpResponse, HttpResponseNotFound, HttpResponseBadRequest
 from blogging_app import forms
 from blogging_app.models import Post
-
+from django.utils.text import slugify
+from time import time
 
 # Create your dashboard views here.
 
@@ -37,11 +38,18 @@ def dashboard_create_post_view(request):
 def dashboard_submit_post_view(request):
     if request.method != "POST":
         return HttpResponseBadRequest("Will create a custom 404 forbidden page.")
-    post = Post(
-        title=request.POST["title"],
-        description=request.POST["description"],
-        is_published=request.POST["is_published"],
-        content=request.POST["content"],
-    )
-    post.save()
-    return redirect("dashboard_app:create_success_view")
+    try:
+        post = Post(
+            title=request.POST["title"],
+            description=request.POST["description"],
+            is_published=request.POST["is_published"],
+            content=request.POST["content"],
+        )
+
+        slug = f"{slugify(request.POST['title'])}-{str(int(time()))}"
+
+        post.slug = slug
+        post.save()
+        return redirect("blogging_app:post", slug=post.slug)
+    except Exception as e:
+        return HttpResponse(f"Exception: {e}")

@@ -12,4 +12,9 @@ urlpatterns = [
         dashboard.dashboard_create_post_view,
         name="dashboard_create_post",
     ),
+    path(
+        "submit_post/",
+        dashboard.dashboard_submit_post_view,
+        name="dashboard_submit_post",
+    ),
 ]
