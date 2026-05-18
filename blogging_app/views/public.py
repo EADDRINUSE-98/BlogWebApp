@@ -3,7 +3,7 @@ from django.shortcuts import render, get_object_or_404
 # from django.views import generic
 from blogging_app.models import Post
 from django.core.exceptions import PermissionDenied
-# from django.http import HttpResponse
+from django.http import HttpResponse, Http404
 # from .. import models
 
 # Create your public views here.
@@ -24,4 +24,4 @@ def post_detail_view(request, slug):
             "blog_content": blog_details.content,
         }
         return render(request, "public/post.html", context)
-    raise PermissionDenied
+    return Http404("404 Not Found!")

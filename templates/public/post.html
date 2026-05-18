@@ -1,11 +1,12 @@
 {% extends "public/base.html" %}
+{% load markdown_filter %}
 <!-- {% load static %} -->
 {% block extra-css %}
 {% endblock extra-css %}
 {% block main-content %}
     <h1>{{ blog_title }}</h1>
     <span>{{ blog_publish_timestamp }}</span>
-    <p>{{ blog_content }}</p>
+    <p>{{ blog_content|markdown|safe }}</p>
 {% endblock main-content %}
 {% block extra-js %}
 {% endblock extra-js %}
