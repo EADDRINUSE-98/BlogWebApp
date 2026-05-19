@@ -53,3 +53,9 @@ def dashboard_submit_post_view(request):
         return redirect("blogging_app:post", slug=post.slug)
     except Exception as e:
         return HttpResponse(f"Exception: {e}")
+
+
+@login_required
+@user_passes_test(staff_check)
+def dashboard_update_post_view(request):
+    pass

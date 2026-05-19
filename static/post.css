@@ -1,0 +1,55 @@
+:root {
+  /* --base-color: black; */
+  --base-color: #080616;
+  --base-variant: #30364F;
+  --text-color: #ff4499;
+  --text-variant: #00ffd2;
+  --primary-color: #0a0047;
+  --secondary-color: #004687;
+  --theme-btn-fill: #F3F3E0;
+}
+
+.lightmode {
+  --base-color: #F3F3E0;
+  --base-variant: #E1D9BC;
+  /* --text-color: #2C3947; */
+  --text-color: #000000;
+  --text-variant: #547A95;
+  --primary-color: #0a0047;
+  --secondary-color: #004687;
+  --theme-btn-fill: #080616;
+}
+
+/* blog container */
+#blog-container {
+  padding-inline: 200px;
+}
+
+#blog-container h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-variant);
+}
+
+#blog-container pre {
+  background-color: var(--base-variant);
+  overflow: scroll;
+  border-radius: 10px;
+  color: var(--text-variant);
+  padding: 10px;
+}
+
+/* edit-grid */
+#edit-grid {
+  display: grid;
+  grid-template-columns: 1fr repeat(2, 50px);
+}
+
+#edit-grid svg {
+  fill: var(--text-variant);
+  width: 24px;
+  height: 24px;
+}
