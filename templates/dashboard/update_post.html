@@ -1,0 +1,44 @@
+{% extends "dashboard/base.html" %}
+{% load static %}
+{% block extra_css %}
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.css">
+    <link href="{% static "dashboard/update_post.css" %}" rel="stylesheet">
+{% endblock extra_css %}
+{% block main_content %}
+    <div id="update_post_container">
+        <h1>Edit Post</h1>
+        <p>Make changes in post.</p>
+        <form id="update_post_form"
+              method="post"
+              action="{% url 'dashboard_app:dashboard_submit_post' %}"
+              novalidate>
+            <!-- <h2> -->
+            <!--     <lable for="title_input">Title</lable> -->
+            <!-- </h2> -->
+            <!-- <input type="text" name="title_input" id="title_input"> -->
+            {% csrf_token %}
+            <h2>
+                <lable for="title_input">Title</lable>
+            </h2>
+            {{ form.title }}
+            <h2>
+                <lable for="description_input">Description</lable>
+            </h2>
+            {{ form.description }}
+            <h2>
+                <lable for="content_input">Post Content</lable>
+            </h2>
+            {{ form.content }}
+            <h2>
+                <lable for="publish_input">Publish Status</lable>
+            </h2>
+            {{ form.is_published }}
+            <button id="post_submit_btn" type="submit">Save</button>
+        </form>
+    </div>
+{% endblock main_content %}
+{% block extra_js %}
+    <script src="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.js"></script>
+    <!-- <script type="module" src="{% static 'dashboard/update_post_editor.js' %}"></script> -->
+{% endblock extra_js %}

@@ -22,6 +22,7 @@ def post_detail_view(request, slug):
             "blog_title": blog_details.title,
             "blog_publish_timestamp": blog_details.publish_timestamp,
             "blog_content": blog_details.content,
+            "blog_slug": blog_details.slug,
         }
         return render(request, "public/post.html", context)
     return Http404("404 Not Found!")

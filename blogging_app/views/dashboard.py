@@ -1,11 +1,9 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.core.exceptions import PermissionDenied
 from django.http import HttpResponse, HttpResponseNotFound, HttpResponseBadRequest
 from blogging_app import forms
 from blogging_app.models import Post
-from django.utils.text import slugify
-from time import time
 
 # Create your dashboard views here.
 
@@ -45,10 +43,6 @@ def dashboard_submit_post_view(request):
             is_published=request.POST["is_published"],
             content=request.POST["content"],
         )
-
-        slug = f"{slugify(request.POST['title'])}-{str(int(time()))}"
-
-        post.slug = slug
         post.save()
         return redirect("blogging_app:post", slug=post.slug)
     except Exception as e:
@@ -57,5 +51,14 @@ def dashboard_submit_post_view(request):
 
 @login_required
 @user_passes_test(staff_check)
-def dashboard_update_post_view(request):
-    pass
+def dashboard_update_post_view(request, slug):
+    post = get_object_or_404(Post, slug=slug)
+    if "POST" == request.method:
+        form = forms.CreatePostForms(request.POST, instance=post)
+        if form.is_valid():
+            form.save()
+            return HttpResponse("Save successfully!")
+    else:
+        form = forms.CreatePostForms(instance=post)
+    context = {"form": form}
+    return render(request, "dashboard/update_post.html", context)

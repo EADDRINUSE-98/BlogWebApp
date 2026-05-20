@@ -17,4 +17,9 @@ urlpatterns = [
         dashboard.dashboard_submit_post_view,
         name="dashboard_submit_post",
     ),
+    path(
+        "edit_post/<slug:slug>/",
+        dashboard.dashboard_update_post_view,
+        name="dashboard_edit_post",
+    ),
 ]
