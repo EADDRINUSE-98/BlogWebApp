@@ -60,5 +60,11 @@ def dashboard_update_post_view(request, slug):
             return HttpResponse("Save successfully!")
     else:
         form = forms.CreatePostForms(instance=post)
-    context = {"form": form}
+    context = {"form": form, "blog_slug": slug}
     return render(request, "dashboard/update_post.html", context)
+
+
+@login_required
+@user_passes_test(staff_check)
+def dashboard_delete_post_view(request, slug):
+    pass

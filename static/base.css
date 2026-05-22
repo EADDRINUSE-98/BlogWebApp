@@ -135,3 +135,7 @@ div.login-btn {
   display: block;
   margin: auto;
 }
+
+button {
+  cursor: pointer;
+}

@@ -11,7 +11,7 @@
         <p>Make changes in post.</p>
         <form id="update_post_form"
               method="post"
-              action="{% url 'dashboard_app:dashboard_submit_post' %}"
+              action="{% url 'dashboard_app:dashboard_edit_post' blog_slug %}"
               novalidate>
             <!-- <h2> -->
             <!--     <lable for="title_input">Title</lable> -->
@@ -40,5 +40,5 @@
 {% endblock main_content %}
 {% block extra_js %}
     <script src="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.js"></script>
-    <!-- <script type="module" src="{% static 'dashboard/update_post_editor.js' %}"></script> -->
+    <script type="module" src="{% static 'dashboard/create_post_editor.js' %}"></script>
 {% endblock extra_js %}

@@ -53,3 +53,8 @@ h6 {
   width: 24px;
   height: 24px;
 }
+
+#delete-btn {
+  background-color: var(--base-color);
+  border: 0;
+}

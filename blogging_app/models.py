@@ -26,6 +26,7 @@ class Post(models.Model):
         This will override the save method to generate slug as per the title.
         Implement because, what if user changes the title of the post.
         """
+        # if self.pk is None:
         if not self.slug:
             timestamp = str(int(time()))
         else:
