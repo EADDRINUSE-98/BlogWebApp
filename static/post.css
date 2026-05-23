@@ -58,3 +58,46 @@ h6 {
   background-color: var(--base-color);
   border: 0;
 }
+
+#edit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* modal styling */
+#modal-container:not([hidden]) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+#modal-label {
+  color: #BF092F;
+}
+
+.modal-btn-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 5px;
+  gap: 30px;
+}
+
+.modal-btn-container button {
+  font-family: inherit;
+  border: 0;
+  padding: 7px;
+  border-radius: 10px;
+}
+
+#modal-cancel-btn {
+  background-color: var(--base-color);
+  color: var(--text-color);
+}
+
+#modal-delete-btn {
+  background-color: #BF092F;
+  color: #E0D9D9;
+}
