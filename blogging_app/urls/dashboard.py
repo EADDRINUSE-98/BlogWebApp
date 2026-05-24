@@ -22,4 +22,9 @@ urlpatterns = [
         dashboard.dashboard_update_post_view,
         name="dashboard_edit_post",
     ),
+    path(
+        "delete_post/<slug:slug>/",
+        dashboard.dashboard_delete_post_view,
+        name="dashboard_delete_post",
+    ),
 ]

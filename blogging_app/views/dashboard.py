@@ -67,4 +67,8 @@ def dashboard_update_post_view(request, slug):
 @login_required
 @user_passes_test(staff_check)
 def dashboard_delete_post_view(request, slug):
-    pass
+    if "POST" == request.method:
+        post = get_object_or_404(Post, slug=slug)
+        post.delete()
+        return redirect("blogging_app:home")
+    return HttpResponseBadRequest("Bad request")
