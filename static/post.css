@@ -115,3 +115,7 @@ h6 {
   background-color: #BF092F;
   color: #E0D9D9;
 }
+
+.lightmode #modal-description {
+  color: #E0D9D9;
+}
