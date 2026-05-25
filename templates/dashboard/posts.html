@@ -1,0 +1,16 @@
+{% extends "dashboard/base.html" %}
+{% load static %}
+{% block extra_css %}
+    <link href="{% static "dashboard/posts.css" %}" rel="stylesheet">
+{% endblock extra_css %}
+{% block main_content %}
+    {% for blog in blog_list %}
+        <div class="blog-section">
+            <a href="{% url 'blogging_app:post' blog.slug %}">{{ blog.title }}</a>
+            <span>{{ blog.description }}</span>
+            <span><strong>{{ blog.publish_timestamp }}</strong></span>
+        </div>
+    {% endfor %}
+{% endblock main_content %}
+{% block extra_js %}
+{% endblock extra_js %}

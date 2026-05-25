@@ -27,4 +27,5 @@ urlpatterns = [
         dashboard.dashboard_delete_post_view,
         name="dashboard_delete_post",
     ),
+    path("posts/", dashboard.dashboard_posts_view, name="dashboard_posts"),
 ]

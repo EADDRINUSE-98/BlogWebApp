@@ -22,7 +22,7 @@
         <div role="tabpanel" aria-labelledby="home-tab" id="home-panel">
             {% for blog in blog_list %}
                 <div class="blog-section">
-                    <a href="{% url 'blogging_app:post' blog.id %}">{{ blog.title }}</a>
+                    <a href="{% url 'blogging_app:post' blog.slug %}">{{ blog.title }}</a>
                     <span>{{ blog.description }}</span>
                     <span><strong>{{ blog.publish_timestamp }}</strong></span>
                 </div>

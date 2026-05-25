@@ -72,3 +72,11 @@ def dashboard_delete_post_view(request, slug):
         post.delete()
         return redirect("blogging_app:home")
     return HttpResponseBadRequest("Bad request")
+
+
+@login_required
+@user_passes_test(staff_check)
+def dashboard_posts_view(request):
+    all_posts = Post.objects.all().values()
+    context = {"blog_list": all_posts}
+    return render(request, "dashboard/posts.html", context)
