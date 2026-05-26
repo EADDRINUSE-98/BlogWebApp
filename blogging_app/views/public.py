@@ -17,12 +17,20 @@ def home(request):
 
 def post_detail_view(request, slug):
     if request.method == "GET":
-        blog_details = get_object_or_404(Post, slug=slug, is_published=True)
-        context = {
-            "blog_title": blog_details.title,
-            "blog_publish_timestamp": blog_details.publish_timestamp,
-            "blog_content": blog_details.content,
-            "blog_slug": blog_details.slug,
-        }
+        blog_details = get_object_or_404(Post, slug=slug)
+        if request.user.is_staff and blog_details.is_published is False:
+            context = {
+                "blog_title": blog_details.title,
+                "blog_publish_timestamp": blog_details.publish_timestamp,
+                "blog_content": blog_details.content,
+                "blog_slug": blog_details.slug,
+            }
+        elif blog_details.is_published:
+            context = {
+                "blog_title": blog_details.title,
+                "blog_publish_timestamp": blog_details.publish_timestamp,
+                "blog_content": blog_details.content,
+                "blog_slug": blog_details.slug,
+            }
         return render(request, "public/post.html", context)
     return Http404("404 Not Found!")

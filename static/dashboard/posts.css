@@ -22,6 +22,11 @@
   --theme-btn-fill: #080616;
 }
 
+div.blog-list-container {
+  display: flex;
+  flex-direction: column;
+}
+
 div.blog-section a {
   text-decoration: none;
   font-size: 2em;
@@ -37,4 +42,27 @@ div.blog-section {
   display: flex;
   flex-direction: column;
   margin-block: 2em;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+div.time-n-tag-container {
+  display: grid;
+  grid-template-columns: 1fr 100px;
+}
+
+div.time-n-tag-container span.published-tag {
+  background-color: rgb(93, 247, 2);
+  color: #000000;
+  margin: auto;
+  border-radius: 2px;
+  box-shadow: 1px 1px 2px rgb(93, 247, 2), -1px -1px 2px rgb(93, 247, 2), -1px 1px 2px rgb(93, 247, 2), 1px -1px 2px rgb(93, 247, 2);
+}
+
+div.time-n-tag-container span.drafted-tag {
+  background-color: rgb(251, 196, 26);
+  color: #000000;
+  margin: auto;
+  border-radius: 2px;
+  box-shadow: 1px 1px 2px rgb(251, 196, 26), -1px -1px 2px rgb(251, 196, 26), -1px 1px 2px rgb(251, 196, 26), 1px -1px 2px rgb(251, 196, 26);
 }
