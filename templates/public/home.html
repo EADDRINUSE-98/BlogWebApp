@@ -4,54 +4,16 @@
     <link rel="stylesheet" href="{% static 'home.css' %}">
 {% endblock extra-css %}
 {% block main-content %}
-    <div role="tabs">
-        <div role="tablist">
-            <button role="tab"
-                    aria-controls="home-panel"
-                    id="home-tab"
-                    aria-selected="true">Home</button>
-            <button role="tab"
-                    aria-controls="most-viewed-panel"
-                    id="most-viewed-tab"
-                    aria-selected="false">Most viewed</button>
-            <button role="tab"
-                    aria-controls="topic-based-panel"
-                    id="topic-based-tab"
-                    aria-selected="false">Topic based</button>
-        </div>
-        <div role="tabpanel" aria-labelledby="home-tab" id="home-panel">
-            {% for blog in blog_list %}
-                <div class="blog-section">
-                    <a href="{% url 'blogging_app:post' blog.slug %}">{{ blog.title }}</a>
-                    <span>{{ blog.description }}</span>
-                    <span><strong>{{ blog.publish_timestamp }}</strong></span>
-                </div>
-            {% endfor %}
-        </div>
-        <div role="tabpanel"
-             aria-labelledby="most-viewed-tab"
-             id="most-viewed-panel"
-             hidden>
-            <div class="most-viewed-section">
-                <p>
-                    Most viewed
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem placeat dolore quibusdam corrupti dolores, laboriosam eveniet nisi perferendis incidunt ad consectetur est molestiae quam quisquam magni cumque facilis minima molestias.
-                </p>
+    <div class="blog-list-container">
+        {% for blog in blog_list %}
+            <div class="blog-section">
+                <a href="{% url 'blogging_app:post' blog.slug %}">{{ blog.title }}</a>
+                <span>{{ blog.description }}</span>
+                <span><strong>{{ blog.publish_timestamp }}</strong></span>
             </div>
-        </div>
-        <div role="tabpanel"
-             aria-labelledby="topic-based-tab"
-             id="topic-based-panel"
-             hidden>
-            <div class="topic-based-section">
-                <p>
-                    Topic based
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem placeat dolore quibusdam corrupti dolores, laboriosam eveniet nisi perferendis incidunt ad consectetur est molestiae quam quisquam magni cumque facilis minima molestias.
-                </p>
-            </div>
-        </div>
+        {% endfor %}
     </div>
 {% endblock main-content %}
 {% block extra_js %}
-    <script src="{% static "home.js" %}"></script>
+    <!-- <script src="{% static "home.js" %}"></script> -->
 {% endblock extra_js %}

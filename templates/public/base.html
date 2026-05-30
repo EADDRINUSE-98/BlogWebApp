@@ -11,7 +11,7 @@
     </head>
     <body>
         <!-- nav bar for header -->
-        <nav class="navbar">
+        <nav class="header">
             <div class="logo">
                 <a href="{% url 'blogging_app:home' %}">Lekh Archive</a>
             </div>
@@ -34,6 +34,17 @@
             </button>
             <div class="login-btn">
                 <a href="{% url 'login' %}">Login</a>
+            </div>
+        </nav>
+        <nav class="navbar">
+            <a href="{% url 'blogging_app:home' %}">Home</a>
+            <div class="dropdown-container">
+                <button id="dropdown-btn">Topics</button>
+                <div class="dropdown-list">
+                    <a href="#">Coding</a>
+                    <a href="#">Networking</a>
+                    <a href="#">Python</a>
+                </div>
             </div>
         </nav>
         <main>

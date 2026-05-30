@@ -56,7 +56,7 @@ body {
   font-style: normal;
 }
 
-.navbar {
+.header {
   display: grid;
   grid-template-columns: 2fr repeat(2, 100px);
   grid-auto-rows: minmax(20px, auto);
@@ -69,7 +69,7 @@ body {
   /* font-style: normal; */
 }
 
-.navbar a {
+.header a {
   text-decoration: none;
 }
 
@@ -138,4 +138,57 @@ div.login-btn {
 
 button {
   cursor: pointer;
+}
+
+/* navbar styling */
+.navbar {
+  display: grid;
+  grid-template-columns: repeat(2, 70px);
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+}
+
+.navbar a {
+  padding-block: 5px;
+  text-decoration: none;
+  color: var(--text-color);
+  margin: auto;
+}
+
+.dropdown-container {
+  display: block;
+  margin: auto;
+  position: relative;
+}
+
+#dropdown-btn {
+  background-color: var(--text-color);
+  border: none;
+  font-size: inherit;
+}
+
+.dropdown-list {
+  display: none;
+  position: absolute;
+  background-color: var(--base-color);
+  border: solid var(--base-variant);
+  padding: 7px;
+  border-radius: 10px;
+  border-top-left-radius: 0;
+}
+
+.dropdown-container:hover .dropdown-list {
+  display: block;
+}
+
+.dropdown-list a {
+  display: block;
+  margin: auto;
+  padding: 2px;
+}
+
+
+.dropdown-list a:hover {
+  background-color: var(--base-variant);
 }
