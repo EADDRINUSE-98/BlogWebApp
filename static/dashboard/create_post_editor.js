@@ -7,6 +7,16 @@ window.addEventListener("DOMContentLoaded", () => {
 
   const editor = new EasyMDE({
     element: textarea,
+    uploadImage: true,
+    imageUploadFunction: function imageUpload(imgfile, onSuccess, onError) {
+      const form = new FormData();
+      form.append("image", imgfile);
+      fetch("/dashboard/upload_image/", {
+        method: "POST",
+        body: form,
+        headers: { "X-CSRFToken": csrfToken, },
+      }).then(response => response.json()).then(data => onSuccess(data)).catch(error => onError(error));
+    },
   });
-
 });
+

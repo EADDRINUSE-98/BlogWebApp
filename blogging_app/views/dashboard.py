@@ -80,3 +80,10 @@ def dashboard_posts_view(request):
     all_posts = Post.objects.all().values()
     context = {"blog_list": all_posts}
     return render(request, "dashboard/posts.html", context)
+
+
+@login_required
+@user_passes_test(staff_check)
+def image_upload_view(request):
+    if request.method != "POST":
+        return HttpResponseBadRequest("Bad request")
