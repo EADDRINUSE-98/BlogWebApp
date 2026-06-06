@@ -4,6 +4,7 @@ from django.core.exceptions import PermissionDenied
 from django.http import HttpResponse, HttpResponseNotFound, HttpResponseBadRequest
 from blogging_app import forms
 from blogging_app.models import Post
+from blogging_app.logic.image_processor import image_processing
 
 # Create your dashboard views here.
 
@@ -87,3 +88,5 @@ def dashboard_posts_view(request):
 def image_upload_view(request):
     if request.method != "POST":
         return HttpResponseBadRequest("Bad request")
+    image = request.FILES.get("image")
+    approve, reason = image_processing(image)
