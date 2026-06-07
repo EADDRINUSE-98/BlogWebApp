@@ -1,10 +1,15 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.core.exceptions import PermissionDenied
-from django.http import HttpResponse, HttpResponseNotFound, HttpResponseBadRequest
+from django.http import (
+    HttpResponse,
+    HttpResponseNotFound,
+    HttpResponseBadRequest,
+    JsonResponse,
+)
 from blogging_app import forms
 from blogging_app.models import Post
-from blogging_app.logic.image_processor import image_processing
+from blogging_app.logic.image_processor import image_processing, image_saver
 
 # Create your dashboard views here.
 
@@ -87,6 +92,15 @@ def dashboard_posts_view(request):
 @user_passes_test(staff_check)
 def image_upload_view(request):
     if request.method != "POST":
-        return HttpResponseBadRequest("Bad request")
-    image = request.FILES.get("image")
-    approve, reason = image_processing(image)
+        return JsonResponse({"error": "Bad request"}, status=400)
+    image_obj = request.FILES.get("image")
+    approve, reason, extension = image_processing(image_obj)
+    if not approve and reason is not None:
+        return JsonResponse({"error": reason}, status=400)
+    success, file_name = image_saver(image_obj, extension)
+    if not success:
+        return JsonResponse(
+            {"error": "Failed to save image!", "reason": file_name}, status=400
+        )
+    url = f"http://127.0.0.1:8081/images/{file_name}"
+    return JsonResponse({"url": url}, status=200)

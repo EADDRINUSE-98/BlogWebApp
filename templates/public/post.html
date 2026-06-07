@@ -46,7 +46,7 @@
                 </div>
             {% endif %}
         </div>
-        <p>{{ blog_content|markdown|safe }}</p>
+        {{ blog_content|markdown|safe }}
     </div>
 {% endblock main-content %}
 {% block extra_js %}
