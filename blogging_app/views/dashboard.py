@@ -102,5 +102,5 @@ def image_upload_view(request):
         return JsonResponse(
             {"error": "Failed to save image!", "reason": file_name}, status=400
         )
-    url = f"http://127.0.0.1:8081/images/{file_name}"
+    url = f"/images/{file_name}"
     return JsonResponse({"url": url}, status=200)

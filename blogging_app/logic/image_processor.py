@@ -51,10 +51,11 @@ def image_saver(file: InMemoryUploadedFile | TemporaryUploadedFile, extension: s
         file_name = f"{time_ns()}.{extension}"
         image_storage_path = "/data/images/"
         with open(f"{image_storage_path}{file_name}", "wb") as img_file:
-            if file is TemporaryUploadedFile:
+            if isinstance(file, TemporaryUploadedFile):
                 for chunk in file.chucks():
                     img_file.write(chunk)
             else:
+                file.seek(0)
                 img_file.write(file.read())
         return True, file_name
     except Exception as error:

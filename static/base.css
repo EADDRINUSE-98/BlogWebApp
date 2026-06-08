@@ -25,6 +25,7 @@
   --primary-color: #0a0047;
   --secondary-color: #004687;
   --theme-btn-fill: #F3F3E0;
+  --dropdown-color: #ff4499;
 }
 
 .lightmode {
@@ -36,6 +37,7 @@
   --primary-color: #0a0047;
   --secondary-color: #004687;
   --theme-btn-fill: #080616;
+  --dropdown-color: #E1D9BC;
 }
 
 body {
@@ -163,7 +165,7 @@ button {
 }
 
 #dropdown-btn {
-  background-color: var(--text-color);
+  background-color: var(--dropdown-color);
   border: none;
   font-size: inherit;
 }

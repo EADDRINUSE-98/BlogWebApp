@@ -136,3 +136,6 @@ STATICFILES_DIRS = [
 LOGIN_URL = "login"
 LOGIN_REDIRECT_URL = "dashboard_app:dashboard"
 LOGOUT_REDIRECT_URL = "blogging_app:home"
+
+# Trust Nginx
+CSRF_TRUSTED_ORIGINS = ["http://127.0.0.1:8001"]
