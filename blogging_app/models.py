@@ -5,6 +5,12 @@ from time import time
 
 # Create your models here.
 
+
+class Tag(models.Model):
+    name = models.CharField(max_length=20)
+    counts = models.IntegerField()
+
+
 IS_PUBLISHED_STATUS_CHOICE = {
     True: "Publish",
     False: "Draft",
@@ -20,6 +26,7 @@ class Post(models.Model):
     )
     content = models.TextField()
     slug = models.SlugField(unique=True, max_length=150)
+    tags = models.ManyToManyField(Tag, related_name="posts", blank=True)
 
     def save(self, *args, **kwargs):
         """
