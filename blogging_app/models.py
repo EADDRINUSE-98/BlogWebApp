@@ -8,7 +8,7 @@ from time import time
 
 class Tag(models.Model):
     name = models.CharField(max_length=20)
-    counts = models.IntegerField()
+    counts = models.IntegerField(default=0)
 
 
 IS_PUBLISHED_STATUS_CHOICE = {

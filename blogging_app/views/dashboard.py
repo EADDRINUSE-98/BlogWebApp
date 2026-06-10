@@ -104,3 +104,9 @@ def image_upload_view(request):
         )
     url = f"/images/{file_name}"
     return JsonResponse({"url": url}, status=200)
+
+
+@login_required
+@user_passes_test(staff_check)
+def dashboard_tags_view(request):
+    pass

@@ -41,7 +41,7 @@
         </nav>
         <main>
             <nav class="sidebar">
-                <a id="home_anchor" href="#">Home</a>
+                <a id="home_anchor" href="{% url 'dashboard_app:dashboard' %}">Home</a>
                 <a id="create_post_anchor"
                    href="{% url 'dashboard_app:dashboard_create_post' %}">Create Post</a>
                 <a id="posts_anchor" href="{% url 'dashboard_app:dashboard_posts' %}">Posts</a>
