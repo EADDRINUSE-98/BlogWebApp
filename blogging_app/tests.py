@@ -3,6 +3,7 @@ from django.urls import reverse
 from django.core.files.uploadedfile import SimpleUploadedFile, TemporaryUploadedFile
 from blogging_app.logic.image_processor import image_processing, image_saver
 import os
+import subprocess
 
 # Create your tests here.
 
@@ -65,3 +66,5 @@ class FileUploadTest(TestCase):
             uploaded_file = SimpleUploadedFile(image_name, image_content, content_type)
             success, file_name = image_saver(uploaded_file, "png")
         self.assertNotEqual(success, False)
+        if os.path.exists(f"/data/images/{file_name}"):
+            subprocess.run(["rm", f"/data/images/{file_name}"])

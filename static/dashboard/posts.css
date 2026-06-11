@@ -75,5 +75,5 @@ hr {
   border: 0;
   height: 2px;
   margin: 20px 100px;
-  background-color: var(--text-color);
+  background-color: var(--base-variant);
 }
