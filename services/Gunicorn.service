@@ -1,0 +1,12 @@
+[Unit]
+Description=Gunicorn Server
+Requires=Gunicorn.socket
+After=network.target
+
+[Service]
+Type=notify
+User=priyanshu
+ExecStart=/etc/startGunicorn.sh
+Restart=always
+StandardOutput=append:/tmp/gunicorn.log
+StandardError=append:/tmp/gunicorn.log
