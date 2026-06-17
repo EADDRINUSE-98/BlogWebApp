@@ -4,11 +4,12 @@ from django.shortcuts import render, get_object_or_404
 from blogging_app.models import Post
 from django.core.exceptions import PermissionDenied
 from django.http import HttpResponse, Http404
-# from .. import models
+from django.views.decorators.cache import cache_page
 
 # Create your public views here.
 
 
+@cache_page(60 * 5)
 def home(request):
     blog_list = Post.objects.filter(is_published=True).values()
     context = {"blog_list": blog_list}
