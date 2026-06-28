@@ -16,6 +16,7 @@ def home(request):
     return render(request, "public/home.html", context)
 
 
+@cache_page(60 * 60)
 def post_detail_view(request, slug):
     if request.method == "GET":
         blog_details = get_object_or_404(Post, slug=slug)
