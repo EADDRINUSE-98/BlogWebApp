@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
 from pathlib import Path
+from datetime import timedelta
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -41,6 +42,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "axes",
 ]
 
 MIDDLEWARE = [
@@ -160,3 +162,24 @@ LOGOUT_REDIRECT_URL = "blogging_app:home"
 
 # Trust Nginx
 CSRF_TRUSTED_ORIGINS = ["http://127.0.0.1:8001"]
+
+# Axes configurations
+
+AUTHENTICATION_BACKENDS = [
+    "axes.backends.AxesStandaloneBackend",  # For axes
+    "django.contrib.auth.backends.ModelBackend",  # default
+]
+
+# Sliding window - fail authentication
+AXES_FAILURE_LIMIT = 5
+AXES_COOLOFF_TIME = timedelta(minutes=30)
+AXES_USE_ATTEMPT_EXPIRATION = True
+AXES_RESET_ON_SUCCESS = True
+AXES_LOCKOUT_PARAMETERS = ["ip_address", "username"]
+
+AXES_IPWARE_META_PRECEDENCE_ORDER = [
+    "HTTP_X_FORWARDED_FOR",
+    "REMOTE_ADDR",
+]
+
+AXES_LOCKOUT_CALLABLE = "blogging_app.utils.custom_lockout_response"
