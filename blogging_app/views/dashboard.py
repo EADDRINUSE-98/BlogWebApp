@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required, user_passes_test
-from django.core.exceptions import PermissionDenied
+from django.core.exceptions import PermissionDenied, FieldError
 from django.http import (
     HttpResponse,
     HttpResponseNotFound,
@@ -8,7 +8,7 @@ from django.http import (
     JsonResponse,
 )
 from blogging_app import forms
-from blogging_app.models import Post
+from blogging_app.models import Post, Tag
 from blogging_app.logic.image_processor import image_processing, image_saver
 
 # Create your dashboard views here.
@@ -109,4 +109,19 @@ def image_upload_view(request):
 @login_required
 @user_passes_test(staff_check)
 def dashboard_tags_view(request):
-    pass
+    """
+    This view is for will show:
+    1. All the tags that are created.
+    2. A 'create new tag' button.
+    3. A 'delete tag' button.
+    4. A 'edit tag' button.
+    """
+    try:
+        all_displayed_names = Tag.objects.all().values_list(
+            "displayed_names", flat=True
+        )
+        context = {"tag_names": all_displayed_names}
+    except FieldError:
+        context = {"error": "No tags created yet."}
+
+    return render(request, "dashboard/show_tags.html", context)

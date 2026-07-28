@@ -29,4 +29,5 @@ urlpatterns = [
     ),
     path("posts/", dashboard.dashboard_posts_view, name="dashboard_posts"),
     path("upload_image/", dashboard.image_upload_view, name="image_upload"),
+    path("tags/", dashboard.dashboard_tags_view, name="tags"),
 ]

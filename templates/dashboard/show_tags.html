@@ -1,0 +1,17 @@
+{% extends "dashboard/base.html" %}
+{% block main_content %}
+    <div id="tag_operation_container">
+        <a href="#">Delete</a>
+        <a href="#">Edit</a>
+        <a href="#">Create</a>
+    </div>
+    <div id="tag_show_container">
+        {% if error %}
+            <span>{{ error }}</span>
+        {% else %}
+            {% for tag_name in tag_names %}
+                <span>{{ tag_name }}</span>
+            {% endfor %}
+        {% endif %}
+    </div>
+{% endblock main_content %}

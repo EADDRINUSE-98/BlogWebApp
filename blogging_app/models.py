@@ -7,8 +7,11 @@ from time import time
 
 
 class Tag(models.Model):
-    name = models.CharField(max_length=20)
-    counts = models.IntegerField(default=0)
+    displayed_name = models.CharField(max_length=20)
+    normalized_name = models.CharField(max_length=20, unique=True, blank=False)
+
+    def __str__(self):
+        return self.displayed_name
 
 
 IS_PUBLISHED_STATUS_CHOICE = {
@@ -33,7 +36,6 @@ class Post(models.Model):
         This will override the save method to generate slug as per the title.
         Implement because, what if user changes the title of the post.
         """
-        # if self.pk is None:
         if not self.slug:
             timestamp = str(int(time()))
         else:
