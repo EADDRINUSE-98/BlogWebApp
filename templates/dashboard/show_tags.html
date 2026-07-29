@@ -1,17 +1,23 @@
 {% extends "dashboard/base.html" %}
+{% load static %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static "dashboard/show_tags.css" %}">
+{% endblock extra_css %}
 {% block main_content %}
     <div id="tag_operation_container">
-        <a href="#">Delete</a>
-        <a href="#">Edit</a>
-        <a href="#">Create</a>
-    </div>
-    <div id="tag_show_container">
-        {% if error %}
-            <span>{{ error }}</span>
-        {% else %}
-            {% for tag_name in tag_names %}
-                <span>{{ tag_name }}</span>
-            {% endfor %}
-        {% endif %}
+        <div id="crud_btn_container">
+            <a href="#">Delete</a>
+            <a href="#">Edit</a>
+            <a href="#">Create</a>
+        </div>
+        <div id="tag_show_container">
+            {% if error %}
+                <span>{{ error }}</span>
+            {% else %}
+                {% for tag_name in tag_names %}
+                    <span>{{ tag_name }}</span>
+                {% endfor %}
+            {% endif %}
+        </div>
     </div>
 {% endblock main_content %}
