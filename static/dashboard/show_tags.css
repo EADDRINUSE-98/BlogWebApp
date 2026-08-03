@@ -23,21 +23,29 @@
 #tag_operation_container {
   display: flex;
   flex-direction: column;
+  margin-inline: 2rem;
+}
+
+#crud_btn_container a {
+  text-decoration: none;
+  background-color: var(--text-color);
+  color: var(--base-color);
+  font-size: 1rem;
+  border-radius: 5px;
+  padding: 10px;
+  margin-inline: auto;
 }
 
 #crud_btn_container {
   display: grid;
-  padding: 2rem;
-  margin: 2rem;
   grid-template-columns: repeat(3, 1fr);
-  gap: 7px;
+  gap: 10px;
 }
 
 #tag_show_container {
   display: flexbox;
-  /* flex: 1; */
   padding: 2rem;
-  margin: 2rem;
+  margin-block: 2rem;
   width: 100%;
   background-color: var(--base-variant);
   border: solid var(--text-color);
