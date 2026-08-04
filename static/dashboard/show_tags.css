@@ -26,14 +26,15 @@
   margin-inline: 2rem;
 }
 
-#crud_btn_container a {
-  text-decoration: none;
+#crud_btn_container button {
+  border: none;
   background-color: var(--text-color);
   color: var(--base-color);
   font-size: 1rem;
   border-radius: 5px;
   padding: 10px;
   margin-inline: auto;
+  font-weight: bold;
 }
 
 #crud_btn_container {
