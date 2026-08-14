@@ -12,21 +12,30 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 
 from pathlib import Path
 from datetime import timedelta
+import os
+from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Loading envrioment setting file
+load_dotenv(BASE_DIR / ".env")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-^u3io0@gi#ch@!9jm!(od2!z3)j3))vbb8s99e3ia^50%&dmv7"
+SECRET_KEY = os.getenv("SECRET_KEY")
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv("DEBUG", "False") == "True"
 
-ALLOWED_HOSTS = ["127.0.0.1"]
+ALLOWED_HOSTS = [
+    origin.strip()
+    for origin in os.environ.get("ALLOWED_HOSTS", "").split(",")
+    if origin.strip()
+]
 
 if DEBUG:
     INTERNAL_IPS = ["127.0.0.1"]
@@ -93,11 +102,11 @@ WSGI_APPLICATION = "blog_site.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "HOST": "127.0.0.1",
-        "NAME": "blog_db",
-        "USER": "blog_dbuser",
-        "PASSWORD": "blogdbpass",
-        "PORT": "5432",
+        "HOST": os.getenv("DB_HOST"),
+        "NAME": os.getenv("DB_NAME"),
+        "USER": os.getenv("DB_USER"),
+        "PASSWORD": os.getenv("DB_PASS"),
+        "PORT": os.getenv("DB_PORT"),
     }
 }
 
@@ -105,8 +114,8 @@ DATABASES = {
 CACHES = {
     "default": {
         "BACKEND": "django.core.cache.backends.redis.RedisCache",
-        "LOCATION": "redis://127.0.0.1:6379/",
-        "KEY_PREFIX": "blogapp",
+        "LOCATION": os.getenv("REDIS_LOCATION"),
+        "KEY_PREFIX": os.getenv("REDIS_KEY_PREFIX"),
         "TIMEOUT": 60 * 15,
         # "OPTIONS": {
         #     "CLIENT_CLASS": "django_redis.client.DefaultClient",
@@ -161,7 +170,11 @@ LOGIN_REDIRECT_URL = "dashboard_app:dashboard"
 LOGOUT_REDIRECT_URL = "blogging_app:home"
 
 # Trust Nginx
-CSRF_TRUSTED_ORIGINS = ["http://127.0.0.1:8001"]
+CSRF_TRUSTED_ORIGINS = [
+    origin.strip()
+    for origin in os.environ.get("CSRF_TRUSTED_ORIGINS", "").split(",")
+    if origin.strip()
+]
 
 # Axes configurations
 

@@ -6,13 +6,20 @@
 {% block main_content %}
     <div id="tag_operation_container">
         <h1>Tag operations</h1>
-        <div id="crud_btn_container">
-            <!-- <a href="#">Delete</a> -->
-            <!-- <a href="#">Edit</a> -->
-            <!-- <a href="#">Create</a> -->
-            <button type="">Delete</button>
-            <button type="">Edit</button>
-            <button type="">Create</button>
+        <div id="crud_container">
+            <button id="crte_btn" type="">Create</button>
+            <div class="overlay">
+                <div role="dialog"
+                     aria-labelledby="modal-label"
+                     --
+                     aria-describedby="modal-description"
+                     -->aria-modal="true"></div>
+                <h2 id="modal-label">Create New Tag</h2>
+                <!-- <span id="modal-description">Create a </span> -->
+                <form action="#">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque doloremque odio fugit ratione. Soluta, a voluptatem perferendis temporibus saepe numquam nemo, alias velit eveniet doloremque totam cum inventore consequuntur nihil?</p>
+                </form>
+            </div>
         </div>
         <div id="tag_show_container">
             {% if error %}
@@ -25,3 +32,6 @@
         </div>
     </div>
 {% endblock main_content %}
+{% block extra_js %}
+    <script src="{% static "dashboard/tag_operations.js" %}"></script>
+{% endblock extra_js %}

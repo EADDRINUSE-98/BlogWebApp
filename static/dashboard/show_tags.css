@@ -26,7 +26,7 @@
   margin-inline: 2rem;
 }
 
-#crud_btn_container button {
+#crud_container button {
   border: none;
   background-color: var(--text-color);
   color: var(--base-color);
@@ -37,7 +37,7 @@
   font-weight: bold;
 }
 
-#crud_btn_container {
+#crud_container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
@@ -51,4 +51,17 @@
   background-color: var(--base-variant);
   border: solid var(--text-color);
   border-radius: 5px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 999;
+  display: none;
+  align-items: center;
+  justify-content: center;
 }
