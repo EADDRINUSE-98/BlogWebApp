@@ -17,4 +17,5 @@ COPY . .
 
 EXPOSE 8000
 
-CMD ["gunicorn", "--workers", "7", "--worker-class", "gevent", "--worker-connections", "80", "--bind", "0.0.0.0:8000", "blog_site.wsgi"]
+#CMD ["gunicorn", "--workers", "7", "--worker-class", "gevent", "--worker-connections", "80", "--bind", "0.0.0.0:8000", "blog_site.wsgi"]
+CMD ["./manage.py", "runserver", "0.0.0.0:8000"]
